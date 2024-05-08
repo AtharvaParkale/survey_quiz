@@ -284,6 +284,7 @@ function endQuiz() {
   var memoryScore = 0;
   var visualDiscriminationScore = 0;
   var audioDiscriminationScore = 0;
+  var surveyScore = 0;
 
   for (var i = 0; i < quizQuestions.length; i++) {
     if (i == 0 || i == 1 || i == 2 || i == 3 || i == 4 || i == 5 || i == 7) {
@@ -300,20 +301,19 @@ function endQuiz() {
       audioDiscriminationScore =
         audioDiscriminationScore + quizQuestions[i].score;
     }
+    surveyScore = surveyScore + quizQuestions[i].score;
   }
   languageVocabScore = languageVocabScore / 28;
   memoryScore = memoryScore / 8;
   visualDiscriminationScore = visualDiscriminationScore / 16;
   audioDiscriminationScore = audioDiscriminationScore / 8;
+  surveyScore = surveyScore / 80;
 
   // Display the final score
   const questionContainer = document.getElementById("question-container");
   questionContainer.innerHTML = `
     <h2>Quiz Completed!</h2>
-    <p>Language Vocabulary Score: ${languageVocabScore.toFixed(2)}</p>
-    <p>Memory Score: ${memoryScore.toFixed(2)}</p>
-    <p>Visual Discrimination Score: ${visualDiscriminationScore.toFixed(2)}</p>
-    <p>Audio Discrimination Score: ${audioDiscriminationScore.toFixed(2)}</p>
+    <p>Survey Score: ${surveyScore.toFixed(2)}</p>
   `;
 }
 
