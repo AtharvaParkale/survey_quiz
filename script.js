@@ -312,7 +312,7 @@ function endQuiz() {
   // Display the final score
   const questionContainer = document.getElementById("question-container");
   questionContainer.innerHTML = `
-    <h2>Quiz Completed!</h2>
+    <h2>Survey Completed!</h2>
     <p>Survey Score: ${surveyScore.toFixed(2)}</p>
   `;
 }
